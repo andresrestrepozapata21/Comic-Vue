@@ -7,7 +7,7 @@ Comic-vue es una aplicación que lista comics de forma aletaria de la api hkcd, 
 Para clonar el proyecto debes seguir los siguientes pasos:
 ```
 - Abre la terminar (se recomienda tener la terminal git.bash, es una terminal excelente)
-- Escribe el comando git clone https://github.com/andresrestrepozapata21/Comic-vue.git
+- Escribe el comando git clone https://github.com/andresrestrepozapata21/Comic-Vue.git
 ```
 
 ## Como ver el proyecto
