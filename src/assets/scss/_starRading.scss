@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+i{
+    color: #e4e5e9;
+    margin-top: 5px;
+    margin-right: 3px;
+    font-size: 60px;
+    cursor:pointer;
+    transition: color 700ms;
+}
+
+i.active, i.hover {
+    color: #ffc107;
+}
+
+p {
+    font-size: 16px;
+}
+
+/*i:hover{
+    cursor: pointer;
+    color: #ffc107;
+    transition: color 700ms;
+}*/
