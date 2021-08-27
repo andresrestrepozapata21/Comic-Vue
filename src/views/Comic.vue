@@ -10,28 +10,33 @@
 // @ is an alias to /src
 import ApiURL from "../components/ApiURL.vue";
 import StarRading from "../components/StarRading.vue";
-import { mapActions, mapMutations, mapState } from 'vuex';
+import { mapActions, mapMutations, mapState } from "vuex";
 
 export default {
   name: "Comic",
   methods: {
-    saveComic(){
+    saveComic() {
       let aux = this.comics;
-      aux['calificacion'] = this.calificacion;
+      aux["calificacion"] = this.calificacion;
       this.safeComics.push(aux);
       this.getComics();
-      for(let j = 0; j <= 4; j++){
-        this.auxiliarStar[j].classList.remove('active')
+      for (let j = 0; j <= 4; j++) {
+        this.auxiliarStar[j].classList.remove("active");
       }
-      this.setCalificacion(0)
+      this.setCalificacion(0);
+      alert(`- Has calificado este comic.
+
+- Sigue calificando los comics que te apareceran.
+       
+- Puedes ver los comics calificados en el modulo Calificados.`);
     },
-     ...mapActions([ 'getComics' ]),
-     ...mapMutations([ 'setCalificacion' ])
+    ...mapActions(["getComics"]),
+    ...mapMutations(["setCalificacion"]),
   },
-  computed:{
-    ...mapState([ 'comics', 'calificacion', 'safeComics', 'auxiliarStar' ])
+  computed: {
+    ...mapState(["comics", "calificacion", "safeComics", "auxiliarStar"]),
   },
-  
+
   components: {
     ApiURL,
     StarRading,
