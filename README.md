@@ -15,7 +15,7 @@ Para clonar el proyecto debes seguir los siguientes pasos:
 Para visualizar el proyecto y a su vez poder visualizar el codigo fuente debemos seguir los siguientes pasos:
 
 ```
-- Debes tener Node instalado.
+- Debes tener Node.js instalado.
 
 - Procedemos a instalar las dependencias del proyecto con el comando "npm i" o "npm install" en la capeta donde se encuentre el archivo package.json.
 
