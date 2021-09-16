@@ -6,22 +6,23 @@ Comic-vue es una aplicación que lista comics de forma aletaria de la api hkcd, 
 
 Para clonar el proyecto debes seguir los siguientes pasos:
 ```
-- Abre la terminar (se recomienda tener la terminal git.bash, es una terminal excelente)
-- Escribe el comando git clone https://github.com/andresrestrepozapata21/Comic-Vue.git
+- Abre la terminal (se recomienda tener la terminal git.bash, es una terminal excelente)
+- Escribe el comando "git clone https://github.com/andresrestrepozapata21/Comic-Vue.git"
 ```
 
 ## Como ver el proyecto
+
+Para visualizar el proyecto y a su vez poder visualizar el codigo fuente debemos seguir los siguientes pasos:
+
 ```
-Para visualizar el proyecto y a su vez poder visualizar el codigo fuente debemos seguir los siguientes pasos :
+- Debes tener "Node.js" instalado.
 
-- Debes tener Node instalado.
+- Procedemos a instalar las dependencias del proyecto con el comando "npm i" o "npm install" en la capeta donde se encuentre el archivo package.json.
 
-- Procedemos a instalar las dependencias del proyecto con el comando npm i en la capeta donde se encuentre el archivo Package.json.
+- Luego corremos el servidor del proyecto con "npm run serve".
 
-- Luego corremos el servidor del proyecto con npm run serve.
-
+```
 Este se compilara y se podra ver a travez del puerto 8080 en el localhost de la maquina en la que se este corriendo.
-```
 
 ## Lista de comandos a tener en cuenta:
 
