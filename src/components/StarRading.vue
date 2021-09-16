@@ -12,10 +12,10 @@
     ></i>
     <p>
       {{
-        calificacion === 0
+        qualification === 0
           ? "Usted no ha calificado este comic"
-          : `Usted calificó este comic con ${calificacion} ` +
-            (calificacion === 1 ? "estrella." : "estrellas.")
+          : `Usted calificó este comic con ${qualification} ` +
+            (qualification === 1 ? "estrella." : "estrellas.")
       }}
     </p>
   </div>
@@ -30,33 +30,33 @@ export default {
     return {
       isActive: false,
       isHover: false,
-      calif: 0,
+      componentlocalQualification: 0,
     };
   },
   computed: {
-    ...mapState(["calificacion", "auxiliarStar", "hoverStars"]),
+    ...mapState(["qualification", "auxiliarStar", "hoverStars"]),
   },
   methods: {
     click(i) {
-      let auxiliar = this.$refs.buttonRef[i].classList;
-      let auxiliar2 = this.$refs.buttonRef;
-      if (auxiliar.contains("active")) {
+      let starVDomReferent = this.$refs.buttonRef[i].classList;
+      let starHoverReferent = this.$refs.buttonRef;
+      if (starVDomReferent.contains("active")) {
         for (let j = 0; j <= 4; j++) {
           this.$refs.buttonRef[j].classList.remove("active");
         }
         for (let j = 0; j <= i; j++) {
           this.$refs.buttonRef[j].classList.add("active");
         }
-        this.calif = i + 1;
-        this.setCalificacion(this.calif);
-        this.setAuxiliarStar(auxiliar2);
+        this.componentlocalQualification = i + 1;
+        this.setQualification(this.componentlocalQualification);
+        this.setStarAssistant(starHoverReferent);
       } else {
         for (let j = 0; j <= i; j++) {
           this.$refs.buttonRef[j].classList.add("active");
         }
-        this.calif = i + 1;
-        this.setCalificacion(this.calif);
-        this.setAuxiliarStar(auxiliar2);
+        this.componentlocalQualification = i + 1;
+        this.setQualification(this.componentlocalQualification);
+        this.setStarAssistant(starHoverReferent);
       }
     },
     hover(value) {
@@ -70,7 +70,7 @@ export default {
         }
       }
     },
-    ...mapMutations(["setCalificacion", "setAuxiliarStar", "setHoverStars"]),
+    ...mapMutations(["setQualification", "setStarAssistant", "setHoverStars"]),
   },
 };
 </script>

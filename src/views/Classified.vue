@@ -1,7 +1,7 @@
 <template>
     <div id="ppal1">
         <h1>Historial de Calificaciones</h1>
-        <ul id="history1">
+        <ul id="tableTitle">
             <li>
                 Número
                 <p> | </p>
@@ -11,7 +11,7 @@
                 <p> | </p>
                 Calificación</li>
         </ul>
-        <ul id="history">
+        <ul id="record">
             <li v-for="comic in safeComics" v-bind:key=comic.id>
                 {{comic.num}}
                 
@@ -19,7 +19,7 @@
                 {{comic.title}}
                 </p>
                 
-                {{comic.calificacion}} Estrellas</li>
+                {{comic.qualification}} Estrellas</li>
         </ul>
     </div>
 </template>
@@ -28,7 +28,7 @@
 import { mapState } from 'vuex';
 
 export default {
-    name: "Calificados",
+    name: "Classified",
     computed: {
         ...mapState([ 'safeComics' ])
     }

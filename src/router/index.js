@@ -12,24 +12,19 @@ const routes = [
     component: Comic
   },
   {
-    path: '/Calificados',
-    name: 'calificados',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Calificados.vue'),
+    path: '/Classified',
+    name: 'classified',
+    component: () => import('../views/Classified.vue'),
   },
   {
-    path: '/Agradecimientos',
-    name: 'agradecimientos',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Agradecimientos.vue'),
+    path: '/Thacks',
+    name: 'thacks',
+    component: () => import('../views/Thacks.vue'),
   },
 ];
 
 const router = new VueRouter({
+  mode: 'history',
   routes,
 });
 

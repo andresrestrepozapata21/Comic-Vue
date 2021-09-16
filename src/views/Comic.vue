@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ApiURL />
+    <ShowingComic />
     <StarRading />
     <button @click="saveComic">Calificar</button>
   </div>
@@ -8,7 +8,7 @@
 
 <script>
 // @ is an alias to /src
-import ApiURL from "../components/ApiURL.vue";
+import ShowingComic from "../components/ShowingComic.vue";
 import StarRading from "../components/StarRading.vue";
 import { mapActions, mapMutations, mapState } from "vuex";
 
@@ -16,29 +16,24 @@ export default {
   name: "Comic",
   methods: {
     saveComic() {
-      let aux = this.comics;
-      aux["calificacion"] = this.calificacion;
-      this.safeComics.push(aux);
+      let comicAssistant = this.comics;
+      comicAssistant["qualification"] = this.qualification;
+      this.safeComics.push(comicAssistant);
       this.getComics();
       for (let j = 0; j <= 4; j++) {
-        this.auxiliarStar[j].classList.remove("active");
+        this.starAssistant[j].classList.remove("active");
       }
-      this.setCalificacion(0);
-      alert(`- Has calificado este comic.
-
-- Sigue calificando los comics que te apareceran.
-       
-- Puedes ver los comics calificados en el modulo Calificados.`);
+      this.setQualification(0);
     },
     ...mapActions(["getComics"]),
-    ...mapMutations(["setCalificacion"]),
+    ...mapMutations(["setQualification"]),
   },
   computed: {
-    ...mapState(["comics", "calificacion", "safeComics", "auxiliarStar"]),
+    ...mapState(["comics", "qualification", "safeComics", "starAssistant"]),
   },
 
   components: {
-    ApiURL,
+    ShowingComic,
     StarRading,
   },
 };

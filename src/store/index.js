@@ -9,23 +9,23 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     comics: [],
-    calificacion: 0,
+    qualification: 0,
     safeComics: [],
-    auxiliarStar: null,
+    starAssistant: null,
     hoverStars: null,
   },
   mutations: {
-    setComics( state, comicsActions ){
-      state.comics = comicsActions
+    setComics( state, comics ){
+      state.comics = comics
     },
-    setCalificacion ( state, calif ){
-      state.calificacion = calif
+    setQualification ( state, qualification ){
+      state.qualification = qualification
     },
-    setAuxiliarStar( state, a ){
-      state.auxiliarStar = a
+    setStarAssistant( state, starAssistant ){
+      state.starAssistant = starAssistant
     },
-    setHoverStars (state, h){
-      state.hoverStars = h
+    setHoverStars (state, hoverAssistant){
+      state.hoverStars = hoverAssistant
     },
   },
   actions: {
