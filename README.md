@@ -47,4 +47,4 @@ npm run test:unit
 ```
 
 ### Personalizar configuraciones
-See [Configuration Reference](https://cli.vuejs.org/config/).
+ver [Referencias de Configuración](https://cli.vuejs.org/config/).
