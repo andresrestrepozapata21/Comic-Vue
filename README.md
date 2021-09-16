@@ -17,7 +17,7 @@ Para visualizar el proyecto y a su vez poder visualizar el codigo fuente debemos
 ```
 - Debes tener "Node.js" instalado.
 
-- Procedemos a instalar las dependencias del proyecto con el comando "npm i" o "npm install" en la capeta donde se encuentre el archivo package.json.
+- Procedemos a instalar las dependencias del proyecto con el comando "npm i" o "npm install" en la capeta donde se encuentre el archivo "package.json".
 
 - Luego corremos el servidor del proyecto con "npm run serve".
 
