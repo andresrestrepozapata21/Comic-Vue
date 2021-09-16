@@ -26,25 +26,25 @@ Este se compilara y se podra ver a travez del puerto 8080 en el localhost de la 
 
 ## Lista de comandos a tener en cuenta:
 
-## Project setup
+## Configuracion del proyecto
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### compilar y recargas en caliente para el desarrollo
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compilar para producción
 ```
 npm run build
 ```
 
-### Run your unit tests
+### Correr las pruebas unitarias
 ```
 npm run test:unit
 ```
 
-### Customize configuration
+### Personalizar configuraciones
 See [Configuration Reference](https://cli.vuejs.org/config/).
