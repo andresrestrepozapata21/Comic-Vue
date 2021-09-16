@@ -11,8 +11,8 @@ export default new Vuex.Store({
     comics: [],
     qualification: 0,
     safeComics: [],
-    starAssistant: null,
-    hoverStars: null,
+    starAssistant: 0,
+    maxiumStars: 5,
   },
   mutations: {
     setComics( state, comics ){
@@ -23,9 +23,6 @@ export default new Vuex.Store({
     },
     setStarAssistant( state, starAssistant ){
       state.starAssistant = starAssistant
-    },
-    setHoverStars (state, hoverAssistant){
-      state.hoverStars = hoverAssistant
     },
   },
   actions: {

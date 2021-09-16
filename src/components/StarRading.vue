@@ -6,16 +6,15 @@
       v-bind:key="star.id"
       :class="isActive ? 'active' : '' || isHover ? 'hover' : ''"
       @click="click(index)"
-      @mouseenter="hover(index)"
-      @mouseleave="hover(null)"
+      @mouseenter="starsHover(index)"
+      @mouseleave="starsHover(null)"
       ref="buttonRef"
     ></i>
     <p>
       {{
         qualification === 0
           ? "Usted no ha calificado este comic"
-          : `Usted calificó este comic con ${qualification} ` +
-            (qualification === 1 ? "estrella." : "estrellas.")
+          : `Usted calificó este comic con ${qualification} ` + (qualification === 1 ? "estrella." : "estrellas.")
       }}
     </p>
   </div>
@@ -30,47 +29,48 @@ export default {
     return {
       isActive: false,
       isHover: false,
-      componentlocalQualification: 0,
     };
   },
   computed: {
-    ...mapState(["qualification", "auxiliarStar", "hoverStars"]),
+    ...mapState(["qualification", "maxiumStars"]),
   },
   methods: {
-    click(i) {
-      let starVDomReferent = this.$refs.buttonRef[i].classList;
-      let starHoverReferent = this.$refs.buttonRef;
+
+    click(index) {
+      let starVDomReferent = this.$refs.buttonRef[index].classList;
+      let starReferent = this.$refs.buttonRef;
+
       if (starVDomReferent.contains("active")) {
-        for (let j = 0; j <= 4; j++) {
-          this.$refs.buttonRef[j].classList.remove("active");
-        }
-        for (let j = 0; j <= i; j++) {
-          this.$refs.buttonRef[j].classList.add("active");
-        }
-        this.componentlocalQualification = i + 1;
-        this.setQualification(this.componentlocalQualification);
-        this.setStarAssistant(starHoverReferent);
+        this.unpaintStars()
+        this.paintStars(index, starReferent)
       } else {
-        for (let j = 0; j <= i; j++) {
-          this.$refs.buttonRef[j].classList.add("active");
-        }
-        this.componentlocalQualification = i + 1;
-        this.setQualification(this.componentlocalQualification);
-        this.setStarAssistant(starHoverReferent);
+        this.paintStars(index, starReferent)
       }
     },
-    hover(value) {
+    starsHover(value) {
       if(value !== null){
           for (let j = 0; j <= value; j++) {
             this.$refs.buttonRef[j].classList.add("hover");
           }
       }else{
-          for (let j = 0; j <= 4; j++) {
+          for (let j = 0; j <= this.maxiumStars-1; j++) {
           this.$refs.buttonRef[j].classList.remove("hover");
         }
       }
     },
-    ...mapMutations(["setQualification", "setStarAssistant", "setHoverStars"]),
+    paintStars(index, starReferent){
+      for (let j = 0; j <= index; j++) {
+          this.$refs.buttonRef[j].classList.add("active");
+        }
+        this.setQualification(index+1);
+        this.setStarAssistant(starReferent);
+    },
+    unpaintStars(){
+      for (let j = 0; j <= this.maxiumStars-1; j++) {
+          this.$refs.buttonRef[j].classList.remove("active");
+        }
+    },
+    ...mapMutations(["setQualification", "setStarAssistant"]),
   },
 };
 </script>
