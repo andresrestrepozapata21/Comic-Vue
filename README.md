@@ -17,7 +17,7 @@ Para visualizar el proyecto y a su vez poder visualizar el codigo fuente debemos
 ```
 - Debes tener "Node.js" instalado.
 
-- Procedemos a instalar las dependencias del proyecto con el comando "npm i" o "npm install" en la capeta donde se encuentre el archivo package.json.
+- Procedemos a instalar las dependencias del proyecto con el comando "npm i" o "npm install" en la capeta donde se encuentre el archivo "package.json".
 
 - Luego corremos el servidor del proyecto con "npm run serve".
 
@@ -26,25 +26,25 @@ Este se compilara y se podra ver a travez del puerto 8080 en el localhost de la 
 
 ## Lista de comandos a tener en cuenta:
 
-## Project setup
+## Configuracion del proyecto
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### compilar y recargas en caliente para el desarrollo
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compilar para producción
 ```
 npm run build
 ```
 
-### Run your unit tests
+### Correr las pruebas unitarias
 ```
 npm run test:unit
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Personalizar configuraciones
+ver [Referencias de Configuración](https://cli.vuejs.org/config/).
