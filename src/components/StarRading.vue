@@ -2,14 +2,13 @@
   <div class="score">
     <i
       class="fa fa-star"
-      v-for="(star, index) in 5"
-      v-bind:key="star.id"
-      :class="isActive ? 'active' : '' || isHover ? 'hover' : ''"
-      @click="click(index)"
+      v-for="(star, index) in this.maxiumStars"
+      v-bind:key="index"
+      @click="clickStar(index)"
       @mouseenter="starsHover(index)"
       @mouseleave="starsHover(null)"
       ref="buttonRef"
-    ></i>
+    />
     <p>
       {{
         qualification === 0
@@ -35,17 +34,15 @@ export default {
     ...mapState(["qualification", "maxiumStars"]),
   },
   methods: {
+    clickStar(index) {
+      let referentStars = this.$refs.buttonRef;
+      let referentEspecificStar = referentStars[index].classList;
 
-    click(index) {
-      let starVDomReferent = this.$refs.buttonRef[index].classList;
-      let starReferent = this.$refs.buttonRef;
-
-      if (starVDomReferent.contains("active")) {
-        this.unpaintStars()
-        this.paintStars(index, starReferent)
-      } else {
-        this.paintStars(index, starReferent)
+      if (!referentEspecificStar.contains("active")) {
+        this.paintStars(index, referentStars)
       }
+        this.unpaintStars()
+        this.paintStars(index, referentStars)
     },
     starsHover(value) {
       if(value !== null){
@@ -58,19 +55,19 @@ export default {
         }
       }
     },
-    paintStars(index, starReferent){
+    paintStars(index, referentStars){
       for (let j = 0; j <= index; j++) {
           this.$refs.buttonRef[j].classList.add("active");
         }
         this.setQualification(index+1);
-        this.setStarAssistant(starReferent);
+        this.setReferentAssistantStar(referentStars);
     },
     unpaintStars(){
       for (let j = 0; j <= this.maxiumStars-1; j++) {
           this.$refs.buttonRef[j].classList.remove("active");
         }
     },
-    ...mapMutations(["setQualification", "setStarAssistant"]),
+    ...mapMutations(["setQualification", "setReferentAssistantStar"]),
   },
 };
 </script>

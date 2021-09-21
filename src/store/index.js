@@ -11,7 +11,7 @@ export default new Vuex.Store({
     comics: [],
     qualification: 0,
     safeComics: [],
-    starAssistant: 0,
+    referentAssistantStar: null,
     maxiumStars: 5,
   },
   mutations: {
@@ -21,8 +21,8 @@ export default new Vuex.Store({
     setQualification ( state, qualification ){
       state.qualification = qualification
     },
-    setStarAssistant( state, starAssistant ){
-      state.starAssistant = starAssistant
+    setReferentAssistantStar( state, referentAssistantStar ){
+      state.referentAssistantStar = referentAssistantStar
     },
   },
   actions: {
