@@ -42,7 +42,7 @@ export default {
           this.safeComics.splice(index, 1)
       },
       editComic(){
-
+          console.log("editar")
       },
   },
 };
