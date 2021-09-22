@@ -2,7 +2,7 @@
   <div>
     <ShowingComic />
     <StarRading />
-    <button @click="saveComic">Calificar</button>
+    <button id="btnClassified" @click="saveComic">Calificar</button>
   </div>
 </template>
 
@@ -21,13 +21,13 @@ export default {
     saveComic() {
       if (this.qualification === 0) {
         // User Notification
-        return toastr.error('No has seleccionado la calificación que le quieres das a este Comic.')
+        return toastr.error('No has seleccionado una calificación en estrellas para este Comic.')
       }
       
       this.safeComic();
 
       // user Notification
-      toastr.success('Se ha guardado la calificación satisfactoriamente\n' + 'puedes ver los detalles en el modulo "Calificados".')
+      toastr.success('Se ha guardado la calificación satisfactoriamente puedes ver los detalles en el modulo "Calificados".')
 
       this.setQualification(0);
       this.unpaintStars();
