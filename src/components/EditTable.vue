@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="ppalEditTable">
     <div ref="btnRef">
       <h1>Edita la calificacion del comic seleccionado.</h1>
       <table>

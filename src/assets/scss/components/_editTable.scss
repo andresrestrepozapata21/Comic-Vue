@@ -1,12 +1,14 @@
-h1 {
-    margin-top: 50px;
+#ppalEditTable {
+    h1 {
+        margin-top: 50px;
+    }
 }
 
 table {
     margin: 20px auto;
     width: 95%;
     border-collapse: collapse;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19)
 }
 
 #titles {
@@ -32,7 +34,7 @@ tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-#btnClassify{
+#btnClassify {
     font-family: 'Comic Neue', cursive;
     background-color: #e7e7e7;
     border-radius: 6px;
@@ -46,14 +48,14 @@ tr:nth-child(even) {
     transition-duration: 0.4s;
 }
 
-#btnClassify:hover{
+#btnClassify:hover {
     background-color: #4CAF50;
     color: white;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-td{
-    input{
+td {
+    input {
         width: 70%;
     }
 }

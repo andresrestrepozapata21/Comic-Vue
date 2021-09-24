@@ -1,5 +1,5 @@
 <template>
-  <div id="ppal1">
+  <div id="ppalClassified">
     <h1>
       {{ isEmpty ? "No hay comics calificados" : "" }}
     </h1>
@@ -18,7 +18,7 @@
             {{ comic.num }}
           </td>
           <td>
-            <img :src="comic.img" alt="" width="160px" height="100px" />
+            <img :src="comic.img" alt="" width="80%" height="120px" />
           </td>
           <td>
             {{ comic.title }}
