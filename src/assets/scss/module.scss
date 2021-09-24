@@ -1,10 +1,11 @@
 // Componentes
-@import "./app";
-@import "./comic";
-@import "./classified";
-@import "./starRading";
-@import "./showingComic";
-@import "./agradecimientos";
+@import "./components/app";
+@import "./views/comic";
+@import "./views/classified";
+@import "./components/starRading";
+@import "./components/showingComic";
+@import "./views/agradecimientos";
+@import "./components/editTable";
 
 // Toastr
 @import "~toastr/build/toastr.css";

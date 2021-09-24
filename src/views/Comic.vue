@@ -9,25 +9,35 @@
 <script>
 import ShowingComic from "../components/ShowingComic.vue";
 import StarRading from "../components/StarRading.vue";
-import toastr from 'toastr'
+import toastr from "toastr";
 import { mapActions, mapMutations, mapState } from "vuex";
 
 export default {
   name: "Comic",
   computed: {
-    ...mapState(["comics","qualification","safeComics","referentAssistantStar","maxiumStars",]),
+    ...mapState([
+      "comics",
+      "qualification",
+      "safeComics",
+      "referentAssistantStar",
+      "maxiumStars",
+    ]),
   },
   methods: {
     saveComic() {
       if (this.qualification === 0) {
         // User Notification
-        return toastr.error('No has seleccionado una calificación en estrellas para este Comic.')
+        return toastr.error(
+          "No has seleccionado una calificación en estrellas para este Comic."
+        );
       }
-      
+
       this.safeComic();
 
       // user Notification
-      toastr.success('Se ha guardado la calificación satisfactoriamente puedes ver los detalles en el modulo "Calificados".')
+      toastr.success(
+        'Se ha guardado la calificación satisfactoriamente puedes ver los detalles en el modulo "Calificados".'
+      );
 
       this.setQualification(0);
       this.unpaintStars();
@@ -38,7 +48,7 @@ export default {
         this.referentAssistantStar[j].classList.remove("active");
       }
     },
-    safeComic(){
+    safeComic() {
       let comicAssistant = this.comics;
       comicAssistant["qualification"] = this.qualification;
       this.safeComics.push(comicAssistant);

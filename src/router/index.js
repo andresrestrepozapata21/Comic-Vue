@@ -21,6 +21,11 @@ const routes = [
     name: 'thacks',
     component: () => import('../views/Thacks.vue'),
   },
+  {
+    path: '/EditTable',
+    name: 'editTable',
+    component: () => import('../components/EditTable.vue'),
+  },
 ];
 
 const router = new VueRouter({

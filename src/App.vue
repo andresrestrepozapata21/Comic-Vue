@@ -5,6 +5,6 @@
       <router-link to="/Classified">Calificados</router-link> |
       <router-link to="/Thacks">Agradecimientos</router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>

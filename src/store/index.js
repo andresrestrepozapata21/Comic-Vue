@@ -13,6 +13,7 @@ export default new Vuex.Store({
     safeComics: [],
     referentAssistantStar: null,
     maxiumStars: 5,
+    comicForEdit: [],
   },
   mutations: {
     setComics( state, comics ){
@@ -23,6 +24,9 @@ export default new Vuex.Store({
     },
     setReferentAssistantStar( state, referentAssistantStar ){
       state.referentAssistantStar = referentAssistantStar
+    },
+    setComicForEdit(state, comicForEdit){
+      state.comicForEdit = comicForEdit
     },
   },
   actions: {

@@ -13,7 +13,8 @@
       {{
         qualification === 0
           ? "Usted no ha calificado este comic"
-          : `Usted calificó este comic con ${qualification} ` + (qualification === 1 ? "estrella." : "estrellas.")
+          : `Usted calificó este comic con ${qualification} ` +
+            (qualification === 1 ? "estrella." : "estrellas.")
       }}
     </p>
   </div>
@@ -39,33 +40,33 @@ export default {
       let referentEspecificStar = referentStars[index].classList;
 
       if (!referentEspecificStar.contains("active")) {
-        this.paintStars(index, referentStars)
+        this.paintStars(index, referentStars);
       }
-        this.unpaintStars()
-        this.paintStars(index, referentStars)
+      this.unpaintStars();
+      this.paintStars(index, referentStars);
     },
-    starsHover(value) {
-      if(value !== null){
-          for (let j = 0; j <= value; j++) {
-            this.$refs.buttonRef[j].classList.add("hover");
-          }
-      }else{
-          for (let j = 0; j <= this.maxiumStars-1; j++) {
+    starsHover(index) {
+      if (index !== null) {
+        for (let j = 0; j <= index; j++) {
+          this.$refs.buttonRef[j].classList.add("hover");
+        }
+      } else {
+        for (let j = 0; j <= this.maxiumStars - 1; j++) {
           this.$refs.buttonRef[j].classList.remove("hover");
         }
       }
     },
-    paintStars(index, referentStars){
+    paintStars(index, referentStars) {
       for (let j = 0; j <= index; j++) {
-          this.$refs.buttonRef[j].classList.add("active");
-        }
-        this.setQualification(index+1);
-        this.setReferentAssistantStar(referentStars);
+        this.$refs.buttonRef[j].classList.add("active");
+      }
+      this.setQualification(index + 1);
+      this.setReferentAssistantStar(referentStars);
     },
-    unpaintStars(){
-      for (let j = 0; j <= this.maxiumStars-1; j++) {
-          this.$refs.buttonRef[j].classList.remove("active");
-        }
+    unpaintStars() {
+      for (let j = 0; j <= this.maxiumStars - 1; j++) {
+        this.$refs.buttonRef[j].classList.remove("active");
+      }
     },
     ...mapMutations(["setQualification", "setReferentAssistantStar"]),
   },
