@@ -54,8 +54,8 @@ export default {
   },
   methods: {
     EditQualification() {
-      if (!/^[1-5]+$/.test(this.newQualification))
-        return toastr.error("Debes ingresar un numero del 1 al 5.");
+      if (!/^[1-5]$/.test(this.newQualification)) return toastr.error("Debes ingresar un numero del 1 al 5.");
+
       this.comicForEdit[0]["qualification"] = this.newQualification;
       this.safeComics.forEach((el) => {
         if (el.num === this.comicForEdit[0].num) {
