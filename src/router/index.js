@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import EditTable from '../components/EditTable.vue'
+import Thanks from '../views/Thanks.vue'
+import Classified from '../views/Classified.vue'
 import Comic from '../views/Comic.vue'
 
 
@@ -14,17 +17,17 @@ const routes = [
   {
     path: '/Classified',
     name: 'classified',
-    component: () => import('../views/Classified.vue'),
+    component: Classified,
   },
   {
-    path: '/Thacks',
-    name: 'thacks',
-    component: () => import('../views/Thacks.vue'),
+    path: '/Thanks',
+    name: 'thanks',
+    component: Thanks,
   },
   {
     path: '/EditTable',
     name: 'editTable',
-    component: () => import('../components/EditTable.vue'),
+    component: EditTable.vue,
   },
 ];
 
